@@ -71,7 +71,7 @@ class OuterClass
 	}
 }
 
-public class InnerStaticClass
+public class E02InnerStaticClass
 {
 
 	public static void main(String[] args)
