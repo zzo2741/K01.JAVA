@@ -28,6 +28,17 @@ class IntNumber
 			return false;// 값이 다르 때 false반환
 		}
 	}
+
+	public boolean myEquals2(int num)
+	{
+		if (this.num == num)
+		{
+			return true;
+		} else
+		{
+			return false;
+		}
+	}
 }
 
 public class E04Object2MyEquals
@@ -62,6 +73,15 @@ public class E04Object2MyEquals
 		}
 
 		if (num1.myEquals(num3))
+		{
+			System.out.println("num1과 num3는 동일한 정수");
+		} else
+		{
+			System.out.println("num1과 num3는 다른 정수");
+
+		}
+
+		if (num1.myEquals2(10))
 		{
 			System.out.println("num1과 num3는 동일한 정수");
 		} else
