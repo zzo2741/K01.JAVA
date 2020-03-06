@@ -79,13 +79,13 @@ public class E02InnerStaticClass
 		// 외부클래스가 아닌 다른 클래스에서 접근할때의 방법은 아래와 같다.
 		
 		/*
-		 * 내부정적 클래스의 정적멤버에 접근할때는 외부클래스의 객체 생성없이 클래스명으로 바로 접근이 가능하다.
+		 * 내부 정적 클래스의 정적멤버에 접근할때는 외부클래스의 객체 생성없이 클래스명으로 바로 접근이 가능하다.
 		 */
 		OuterClass.InnerStaticClass.innerStaticVar = 1;
 		OuterClass.InnerStaticClass.innerStaticMethod();
 
 		/*
-		 * 내부정적 클래스의 인스턴스멤버에 접근할때는 객체를 생성한 후 참조변수를 통해서 접근해야 한다.
+		 * 내부 정적 클래스의 인스턴스멤버에 접근할때는 객체를 생성한 후 참조변수를 통해서 접근해야 한다.
 		 */
 		OuterClass.InnerStaticClass innerStaticClass = new OuterClass().innerStaticClass;
 		innerStaticClass.innerMemberVar = 2;
