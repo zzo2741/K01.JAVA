@@ -108,6 +108,7 @@ public class InnerStaticClass
 		// 바보..
 		System.out.println("바보");
 		System.out.println("바보");
+		System.out.println("바보");
 
 	}
 
