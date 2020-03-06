@@ -105,7 +105,8 @@ public class InnerStaticClass
 		 */
 		OuterClass.outerStaticVar = 4;
 		OuterClass.outerStaticMethod();
-		// 바보
+		// 바보..
+		System.out.println("바보");
 		System.out.println("바보");
 
 	}
