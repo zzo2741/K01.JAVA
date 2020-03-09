@@ -90,5 +90,4 @@ public class E04Object2MyEquals
 
 		}
 	}
-
 }
