@@ -43,6 +43,7 @@ public class Ex06DeveloperDefine
 			inputAge = sc.nextInt();
 		} catch (InputMismatchException e)
 		{
+			System.out.println("여기");
 			e.printStackTrace();
 			System.exit(0);;
 		}
