@@ -1,7 +1,16 @@
 package quiz_game;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+
+class WrongNumberException extends Exception
+{
+	public WrongNumberException()
+	{
+		super("[예외발생] 게임과 관련없는 숫자를 입력했습니다. 다시 입력해주세요.");
+	}
+}
 
 public class QuRockPaperScissorsGame
 {
@@ -9,12 +18,38 @@ public class QuRockPaperScissorsGame
 	static Scanner scanner = new Scanner(System.in);
 	static int gameCount = 0; // 게임의 횟수를 카운트하기 위한 변수
 
+	public static int inputNum() throws WrongNumberException
+	{
+		int inputNum = 0;
+		try
+		{
+			inputNum = scanner.nextInt();
+		} catch (InputMismatchException e)
+		{
+			System.out.println("[예외발생] 문자를 입력했습니다. 숫자를 입력해주세요.");
+		}
+
+		// 게임과 관련없는 숫자를 입력했을떄
+		if (inputNum < 0 || inputNum > 3)
+		{
+			WrongNumberException ex = new WrongNumberException();
+			throw ex;
+		}
+		return inputNum;
+	}
+
 	public static int initUser()
 	{
 		int user = 0;
 		System.out.println("가위바위보를 입력하세요");
 		System.out.print("가위(1),바위(2),보(3)=>");
-		user = scanner.nextInt();
+		try
+		{
+			user = inputNum();
+		} catch (WrongNumberException e)
+		{
+			System.out.println("[예외발생] " + e.getMessage());
+		}
 		return user;
 	}
 
@@ -29,14 +64,20 @@ public class QuRockPaperScissorsGame
 
 	public static int reAnswer()
 	{
-		int restart;
-		System.out.print("게임재시작(1), 종료(0):");
-		restart = scanner.nextInt();
+		int restart = 0;
+		System.out.print("===게임재시작(1), 종료(0)===");
+		try
+		{
+			restart = inputNum();
+		} catch (WrongNumberException e)
+		{
+			System.out.println("[예외발생] " + e.getMessage());
+		}
 		return restart;
 
 	}
 
-	public static void reGame()
+	public static void reGame() throws WrongNumberException
 	{
 		// 5번의 게임이 되었는지 판단후 재시작/종료 확인
 		if (gameCount >= 5)
@@ -65,16 +106,16 @@ public class QuRockPaperScissorsGame
 				System.out.println("게임 재시작^^");
 				gameCount = 0;
 				rpsGameStart();
-
 			}
 		}
 	}
 
-	public static void rpsGameStart()
+	public static void rpsGameStart() throws WrongNumberException
 	{
+		int user = initUser();
+
 		while (true)
 		{
-			int user = initUser();
 			int com = initCom();
 			// 3.승부판단 및 결과출력
 			if (!(user < 1 || user > 3))
@@ -103,7 +144,7 @@ public class QuRockPaperScissorsGame
 				reGame();
 			} else
 			{
-				System.out.println("가위바위보 할줄 모름??븅신~");
+				rpsGameStart();
 			}
 		}
 	}
@@ -127,7 +168,7 @@ public class QuRockPaperScissorsGame
 		return str;
 	}
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws WrongNumberException
 	{
 		// 가위바위보 게임 메소드 호출
 		rpsGameStart();
