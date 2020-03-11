@@ -40,6 +40,7 @@ public class QuRockPaperScissorsException
 			} catch (InputMismatchException e)
 			{
 				e.printStackTrace();
+				break;
 			}
 
 			// 사용자 입력이 1~3이 아니면 사용자정의 예외 발생시킴
