@@ -44,8 +44,8 @@ public class Ex06DeveloperDefine
 		} catch (InputMismatchException e)
 		{
 			System.out.println("여기");
-			e.printStackTrace();
-			System.exit(0);;
+			//e.printStackTrace();
+			//System.exit(0);;
 		}
 		
 		//나이가 음수로 입력된 경우 예외발생
