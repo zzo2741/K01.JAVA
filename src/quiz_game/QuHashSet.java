@@ -27,11 +27,17 @@ class Avengers
 	@Override
 	public int hashCode()
 	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((heroName == null) ? 0 : heroName.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((weapon == null) ? 0 : weapon.hashCode());
+		// 객체가 가진 고유한 값(참조값)을 int형으로 반환하는 메소드
+		int hc1 = name.hashCode();
+		int hc2 = heroName.hashCode();
+		int hc3 = weapon.hashCode();
+		System.out.println(hc1 + " " + hc2 + " " + hc3);
+		int result = hc1 + hc2 + hc3;
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + ((heroName == null) ? 0 : heroName.hashCode());
+//		result = prime * result + ((name == null) ? 0 : name.hashCode());
+//		result = prime * result + ((weapon == null) ? 0 : weapon.hashCode());
 		return result;
 	}
 
@@ -39,6 +45,7 @@ class Avengers
 	public boolean equals(Object obj)
 	{
 		{
+			// 형변환
 			Avengers compareAvengers = (Avengers) obj;
 
 			// 자동 호출되는지 확인
@@ -56,12 +63,10 @@ class Avengers
 			}
 		}
 	}
-
 }
 
 public class QuHashSet
 {
-
 	public static void main(String[] args)
 	{
 
@@ -80,12 +85,14 @@ public class QuHashSet
 		System.out.println("[최초 전체 정보출력]");
 		for (Avengers av : set)
 		{
-			System.out.println(av.toString());
+			System.out.println(av);
 		}
 
+		// 이름으로 검색
 		System.out.print("검색할 이름을 입력하세욤 : ");
 		Scanner scanner = new Scanner(System.in);
 		String searchName = scanner.nextLine();
+		boolean searchFlag = false; // 검색결과 유무 확인
 
 		for (Iterator iterator = set.iterator(); iterator.hasNext();)
 		{
@@ -93,7 +100,15 @@ public class QuHashSet
 			if (searchName.equals(avengers.name))
 			{
 				System.out.println(avengers);
+				searchFlag = true;
 			}
+		}
+		
+		if(searchFlag != false) {
+			System.out.println("이딴 영웅이 어딨냐");
+		}
+		else {
+			System.out.println(searchName + "요기땅");
 		}
 	}
 }
