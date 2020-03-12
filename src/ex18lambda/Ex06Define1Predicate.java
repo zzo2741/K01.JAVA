@@ -28,11 +28,14 @@ public class Ex06Define1Predicate
 		/*
 		 * Predicate<Human> 인터페이스를 구현하여 정의한 람다식. test() 추상메소드를 오버라이딩 하고 있다.
 		 */
+		/*************************************************/
 		Predicate<Human> pre = (Human h) ->
 		{
 			// 성별이 남자일 때 true 반환함
 			return h.getGender().equals("남");
 		};
+		
+		/*************************************************/
 		System.out.println("p.test(p1) => " + pre.test(p1));
 		System.out.println("p.test(p2) => " + pre.test(p2));
 
