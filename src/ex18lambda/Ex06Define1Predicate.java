@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-
 /*
  * JAVA에서 제공하는 기본 함수형 인터페이스 다음과 같은 종류가 있다.
  * 큰 차이점이라면 매개변수의 유무, 리턴값의 유무 정도이다.
@@ -17,8 +16,8 @@ import java.util.function.Predicate;
 
 public class Ex06Define1Predicate
 {
-	/*
-	 * Interface Predicate<E> { boolean test(T t); }
+	/* 요렇게 생겨먹었다는 것을 알아야 한다.
+	 * Interface Predicate<E> { boolean test(T t); } // test 메소드 항상 생각하기
 	 * 
 	 * : 전달된 인자를 대상으로 true, false를 판단할 때 사용하는 추상메소드를 정의하고 있다.
 	 */

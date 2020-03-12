@@ -96,8 +96,8 @@ public class Ex05HashMapMain
 		System.out.println(map.containsValue("남자") ? "남자 *있다*" : "남자 *없다*");
 		System.out.println(map.containsValue("여자") ? "여자 *있다*" : "여자 *없다*");
 
-		/*
-		 * 7]삭제
+		/*/10012
+		 * 		 * 7]삭제
 		 * 		: key값을 통해 삭제하고, 삭제가 완료되면 해당 value가 반환된다.
 		 */
 		System.out.println("\n삭제된 객체 : " + map.remove("age"));

@@ -29,7 +29,7 @@ public class Ex04FunctionalInterface
 
 	public static void main(String[] args)
 	{
-		Ikosmo4 kosmo = (str) -> System.out.println("Ikosmo4를 구현받아 정의한 람다입니다." + str);
+		Ikosmo4 kosmo = (str) -> System.out.println("Ikosmo4를 구현받아 정의한 람다입니다." + str); //참조변수가 람다식을 가리킨다
 		execute(kosmo, "\n람다를 매개변수로 전달합니다.");
 	}
 
