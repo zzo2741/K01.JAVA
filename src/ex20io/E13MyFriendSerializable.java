@@ -1,11 +1,17 @@
-package ex12inheritance;
+package ex20io;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
-연습문제] 해당 프로그램은 친구의 정보를 저장하게 된다. 프로그램 종료시 Friend타입의 객체배열에 저장된 친구의 정보를 파일의 형태로 저장할 수 있도록 직렬화 하시오.
-- 저장될 파일명 : friend_info.obj
+친구를 표현한 최상위 클래스로 해당 프로그램에서는 Friend로 객체생성은 하지 않는다.
+상속의 목적으로만 정의된 클래스이다.
  */
 
 abstract class Friend implements Serializable
@@ -235,9 +241,27 @@ class FriendInfoHandler
 		}
 	}//// end of deleteInfo
 
+	// 친구정보 파일로 저장
+	public void saveFriendInfo()
+	{
+		try
+		{
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream( ));
+
+			// myFriendsy 객체 배열에 저장된 친구의 정보만큼 반복
+			for (int i = 0; i < numOfFriends; i++)
+			{
+				out.writeObject(myFriends[i]);
+			}
+		} catch (Exception e)
+		{
+			System.out.println("예외 발생");
+			e.printStackTrace();
+		}
+	}
 }//// end of FriendInfoHandler
 
-public class E10MyFriendInfoBook
+public class E13MyFriendSerializable
 {
 	// 프로그램에서의 입력메뉴 출력
 	public static void menuShow()
@@ -290,7 +314,7 @@ public class E10MyFriendInfoBook
 				break;
 			case 7:
 				// 친구정보검색
-				//handler.saveFriendInfo();
+				handler.saveFriendInfo();
 				System.out.println("프로그램을 종료합니다.");
 				return; // main함수의 종료는 프로그램 종료로 이어진다.
 			}
