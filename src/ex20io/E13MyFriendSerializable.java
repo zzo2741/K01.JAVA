@@ -246,7 +246,7 @@ class FriendInfoHandler
 	{
 		try
 		{
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream( ));
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/ex20io/friend_info.obj"));
 
 			// myFriendsy 객체 배열에 저장된 친구의 정보만큼 반복
 			for (int i = 0; i < numOfFriends; i++)
