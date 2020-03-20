@@ -22,6 +22,7 @@ public class E05DateCalendarNotUsed
 		 * 번거롭고, 생성비용이 비싸다.
 		 */
 		Calendar cal = Calendar.getInstance();
+		System.out.println(cal.getTime());
 		System.out.println("현재날짜 : " + myDateFormat(cal));
 		
 		cal.add(Calendar.DATE, 1);
