@@ -75,7 +75,7 @@ public class DBConnection
 				int sal = rs.getInt("salary");
 				String j_id = rs.getString("job_id");
 				
-				System.out.printf("%10s %10s %10s %10s %10s %10s %n", emp_id, f_name, l_name, h_date, sal, j_id);
+				System.out.printf("%4s %8s %12s %10s %6s %10s %n", emp_id, f_name, l_name, h_date, sal, j_id);
 			}
 			/*
 			 * 6] 자원반납 : 모든 작업을 마친 후에는 메모리 절약을 위해 연결했던 자원을 반납한다.
