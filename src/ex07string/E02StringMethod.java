@@ -167,6 +167,7 @@ public class E02StringMethod
 		 * 		사용법2 : substring(인덱스1, 인덱스2) -> 인덱스에 포함되는 부분만 잘라서 반환한다.
 		 */
 		
+		
 		System.out.println(str1.substring(3));
 		System.out.println(str1.substring(3, 7));
 		

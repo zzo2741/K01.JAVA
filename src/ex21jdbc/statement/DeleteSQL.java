@@ -47,8 +47,8 @@ public class DeleteSQL
 		{
 			stmt = con.createStatement();
 			/*
-			 * test1 삭제 시 제약조건위배 예외발생
-			 * test99와 같이 DB에 입력되지 않은 레코드 삭제시에는 예외없이  삭제되지 않음
+			 * test1 삭제 시 제약조건위배 예외발생 test99와 같이 DB에 입력되지 않은 레코드 삭제시에는
+			 * 예외없이 삭제되지 않음
 			 */
 			String query = " delete from member where id = 'test2' ";
 			int affected = stmt.executeUpdate(query);
