@@ -31,8 +31,10 @@ class Avengers
 		int hc1 = name.hashCode();
 		int hc2 = heroName.hashCode();
 		int hc3 = weapon.hashCode();
-		System.out.println(hc1 + " " + hc2 + " " + hc3);
-		int result = hc1 + hc2 + hc3;
+//		System.out.println(hc1 + " " + hc2 + " " + hc3);
+//		int result = hc1 + hc2 + hc3;
+		int result = hc1 + hc3;
+
 //		final int prime = 31;
 //		int result = 1;
 //		result = prime * result + ((heroName == null) ? 0 : heroName.hashCode());
@@ -51,10 +53,12 @@ class Avengers
 			// 자동 호출되는지 확인
 			System.out.println("중복 제거용 equals()메소드 호출");
 
-			// if (comparePerson.age == this.age && comparePerson.name.equals(this.name))
+			// if (comparePerson.age == this.age &&
+			// comparePerson.name.equals(this.name))
 
-			if (compareAvengers.name.equals(this.name) && compareAvengers.heroName.equals(this.heroName)
-					&& compareAvengers.weapon.equals(this.weapon))
+			if (compareAvengers.name.equals(this.name))
+//					&& compareAvengers.heroName.equals(this.heroName)
+//					&& compareAvengers.weapon.equals(this.weapon))
 			{
 				return true; // 똑같으면 true 반환하는 것이 원칙
 			} else
@@ -75,7 +79,7 @@ public class QuHashSet
 		Avengers hero1 = new Avengers("토니스타크", "아이언맨", "Mark-48 수트");
 		Avengers hero2 = new Avengers("스티브로져스", "캡틴아메리카", "비브라늄 방패");
 		Avengers hero3 = new Avengers("브루스배너", "헐크", "강한피부&점프");
-		Avengers hero4 = new Avengers("토니스타크", "아이언맨", "Mark-48 수트");
+		Avengers hero4 = new Avengers("토니스타크", "아이언맨1", "Mark-48 수트1");
 
 		set.add(hero1);
 		set.add(hero2);
@@ -103,11 +107,12 @@ public class QuHashSet
 				searchFlag = true;
 			}
 		}
-		
-		if(searchFlag != false) {
+
+		if (searchFlag != false)
+		{
 			System.out.println("이딴 영웅이 어딨냐");
-		}
-		else {
+		} else
+		{
 			System.out.println(searchName + "요기땅");
 		}
 	}

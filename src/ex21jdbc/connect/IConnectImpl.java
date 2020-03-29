@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class IConnectImpl implements IConnect
-{ 
+{
 	// 동적쿼리 처리를 위한 객체
 	public PreparedStatement psmt;
 	public Connection con;
@@ -26,10 +26,10 @@ public class IConnectImpl implements IConnect
 		{
 			// 드라이버 로드
 			Class.forName(ORACLE_DRIVER);
-			
-			//DB연결
+
+			// DB연결
 			connect(user, pass);
-			
+
 		} catch (ClassNotFoundException e)
 		{
 			System.out.println("드라이버 로딩 실패");
@@ -51,8 +51,7 @@ public class IConnectImpl implements IConnect
 		}
 	}
 
-	
-	//오버라이딩의 목적으로만 정의한 메소드, 쿼리실행은 각 클래스에서 진행한다.
+	// 오버라이딩의 목적으로만 정의한 메소드, 쿼리실행은 각 클래스에서 진행한다.
 	@Override
 	public void execute()
 	{
@@ -87,13 +86,14 @@ public class IConnectImpl implements IConnect
 		String inputStr = scanner.nextLine();
 
 		/*
-		 * equalsIgnoreCase() : equals()메소드와 동일하게 문자열이 같은지 비교하는 메소드로 다른점은 대소문자를 구분하지 않는다.
+		 * equalsIgnoreCase() : equals()메소드와 동일하게 문자열이 같은지 비교하는 메소드로
+		 * 다른점은 대소문자를 구분하지 않는다.
 		 */
 		if ("EXIT".equalsIgnoreCase(inputStr))
 		{
 			System.out.println("프로그램을 종료합니다.");
 			close();
-			
+
 			// 프로그램 자체가 즉시 종료된다.
 			System.exit(0);
 		}

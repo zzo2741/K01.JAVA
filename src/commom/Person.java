@@ -61,13 +61,15 @@ public class Person
 		// 자동 호출되는지 확인
 		System.out.println("오버라이딩 한 equals()메소드 호출됨 : " + comparePerson.name);
 
-		//if (comparePerson.age == this.age && comparePerson.name.equals(this.name))
+		// if (comparePerson.age == this.age &&
+		// comparePerson.name.equals(this.name))
 		if (comparePerson.name.equals(this.name))
 		{
-			return true; //똑같으면 true 반환하는 것이 원칙
+			return true; // 똑같으면 true 반환하는 것이 원칙
 		} else
 		{
 			return false;
 		}
 	}
+	
 }
