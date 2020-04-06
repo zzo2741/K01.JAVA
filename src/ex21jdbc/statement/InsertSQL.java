@@ -14,7 +14,7 @@ public class InsertSQL
 	// 생성자 객체가 생성될 때 생성
 	public InsertSQL()
 	{
-		try
+		try 
 		{
 			// 1. 오라클 드라이버 로드
 			Class.forName("oracle.jdbc.OracleDriver");
