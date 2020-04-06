@@ -3,7 +3,7 @@ class SinusCap
 	void sniTake()
 	{
 		System.out.println("콧물 싹");
-	}
+	} 
 
 	void sneTake()
 	{
