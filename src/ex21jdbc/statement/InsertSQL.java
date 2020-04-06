@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class InsertSQL
-{
+{ 
 	// 멤버변수
 	Connection con; // DB연결을 위한 객체
 	Statement stmt; // 쿼리 전송 및 실행을 위한 객체
