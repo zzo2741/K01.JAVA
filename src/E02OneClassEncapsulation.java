@@ -11,7 +11,7 @@ class SinusCap
 	}
 
 	void snuTake()
-	{
+	{ 
 		System.out.println("코가 뻥");
 	}
 
