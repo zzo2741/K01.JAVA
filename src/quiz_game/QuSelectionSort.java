@@ -36,7 +36,7 @@ class SelectionSort
 	{
 		int smallNum, num = 0, i = 0, j = 0;
 
-		for (i = 0; i < 9; i++)
+		for (i = 0; i < arr.length-1; i++)
 		{
 			smallNum = 101;
 			for (j = i; j < arr.length; j++)
@@ -62,7 +62,7 @@ class SelectionSort
 
 		int bigNum, num = 0, i = 0, j = 0;
 
-		for (i = 0; i < 9; i++)
+		for (i = 0; i < arr.length-1; i++)
 		{
 			bigNum = 0;
 			for (j = i; j < arr.length; j++)
