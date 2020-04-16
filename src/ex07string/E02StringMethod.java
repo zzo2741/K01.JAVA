@@ -6,7 +6,7 @@ public class E02StringMethod
 	{
 		System.out.println("String 클래스의 주요 메소드");
 
-		String str1 = "Welcome to java";
+		String str1 = "Welcometojava";
 		String str2 = "자바야 안녕!";
 
 		/*
@@ -63,7 +63,12 @@ public class E02StringMethod
 		 * 포함되었으면 true, 아니면 false를 반환한다.
 		 */
 		System.out.println("To");
-		System.out.println("to");
+		System.out.println("to ");
+		if(str1.contains("to ") == true) {
+			System.out.println("*****바보");
+		}else {
+			System.out.println("*****바보1");
+		}
 
 		/*
 		 * 시나리오] 해당 문자열이 이메일 형식인지 검사하는 프로그램을 작성하시오.
