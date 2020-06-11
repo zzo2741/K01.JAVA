@@ -1,16 +1,21 @@
 package ex21jdbc.connect;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class IConnectImpl implements IConnect
 {
 	// 동적쿼리 처리를 위한 객체
 	public PreparedStatement psmt;
+	// 프로시저 혹은 함수를 호출하기 위한 객체
+	public CallableStatement csmt;
+	public Statement smt;
 	public Connection con;
 	public ResultSet rs;
 
@@ -43,7 +48,7 @@ public class IConnectImpl implements IConnect
 	{
 		try
 		{
-			con = DriverManager.getConnection(ORALE_URL, user, pass);
+			con = DriverManager.getConnection(ORACLE_URL, user, pass);
 		} catch (SQLException e)
 		{
 			System.out.println("데이터베이스 연결 오류");
@@ -84,7 +89,6 @@ public class IConnectImpl implements IConnect
 		Scanner scanner = new Scanner(System.in);
 		System.out.println(title + "을(를) 입력(exit->종료) : ");
 		String inputStr = scanner.nextLine();
-
 		/*
 		 * equalsIgnoreCase() : equals()메소드와 동일하게 문자열이 같은지 비교하는 메소드로
 		 * 다른점은 대소문자를 구분하지 않는다.

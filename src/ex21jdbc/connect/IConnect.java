@@ -7,7 +7,7 @@ public interface IConnect
 	 * 		: interface에 선언된 변수는 무조건 public static final이 붙어 정적상수로 선언된다.
 	 */
 	String ORACLE_DRIVER = "oracle.jdbc.OracleDriver";
-	String ORALE_URL = "jdbc:oracle:thin://@localhost:1521:orcl";
+	String ORACLE_URL = "jdbc:oracle:thin://@localhost:1521:orcl";
 
 	/*
 	 * 멤버추상메소드
